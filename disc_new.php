@@ -18,51 +18,50 @@
 
     <h1>Ajout d'un nouveau disque</h1>
 
-    <a href="discs.php"><button>Retour à la liste</button></a>
+    <a href="discs.php" class="btn btn-primary">Retour à la liste</a>
 
     <br>
     <br>
 
-    <form action ="script_disc_ajout.php" method="post" enctype="multipart/form-data">
+    <div class="container form-group">
+        <form action ="script_disc_ajout.php" method="post" enctype="multipart/form-data">
 
-        <label for="titre_disc">Title</label><br>
-        <input type="text" name="titre" id="titre_disc">
-        <br><br>
+            <label for="titre_disc">Title</label><br>
+            <input type="text" name="titre" id="titre_disc" class="form-control">
+            <br><br>
 
-        <label for="artist_disc">Artist</label><br>
-        <select id="artist_disc" name="artist_id"> 
-                    <option value="selection" selected>Choisissez un artiste</option>
-                    <?php foreach ($tableau as $disc): ?>
-                        <option value=<?=$disc->artist_id?>><?= $disc->artist_name ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <label for="artist_disc">Artist</label><br>
+            <select id="artist_disc" name="artist_id" class="form-control"> 
+                <option value="selection" selected>Choisissez un artiste</option>
+                <?php foreach ($tableau as $disc): ?>
+                    <option value=<?=$disc->artist_id?>><?= $disc->artist_name ?></option>
+                <?php endforeach; ?>
+            </select>         
+            <br><br>
 
-                
-        <br><br>
+            <label for="year_disc">Year</label><br>
+            <input type="text" name="year" id="year_disc" class="form-control">
+            <br><br>
 
-        <label for="year_disc">Year</label><br>
-        <input type="text" name="year" id="year_disc">
-        <br><br>
+            <label for="genre_disc">Genre</label><br>
+            <input type="text" name="genre" id="genre_disc" class="form-control">
+            <br><br>
 
-        <label for="genre_disc">Genre</label><br>
-        <input type="text" name="genre" id="genre_disc">
-        <br><br>
+            <label for="label_disc">Label</label><br>
+            <input type="text" name="label" id="label_disc" class="form-control">
+            <br><br>
 
-        <label for="label_disc">Label</label><br>
-        <input type="text" name="label" id="label_disc">
-        <br><br>
+            <label for="price_disc">Price</label><br>
+            <input type="text" name="price" id="price_disc" class="form-control">
+            <br><br>
 
-        <label for="price_disc">Price</label><br>
-        <input type="text" name="price" id="price_disc">
-        <br><br>
+            <label for="pic_disc">Picture</label><br>
+            <input type="file" name="img" id="pic_disc" class="form-control">
+            <br><br>
 
-        <label for="pic_disc">Picture</label><br>
-        <input type="file" name="img" id="pic_disc">
-        <br><br>
-
-        <input type="submit" value="Ajouter">
-        <input type="reset" value="Retour">
-
-    </form>
+            <input type="submit" class="btn btn-primary" value="Ajouter">
+            <input type="reset" class="btn btn-primary" value="Retour">
+        </form>
+    </div>
 
 <?php include("footer.php"); ?>

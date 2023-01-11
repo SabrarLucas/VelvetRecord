@@ -23,23 +23,28 @@
 <?php include("header.php"); ?>
 
 <section>
-    <a href="disc_new.php"><button>Ajouter</button></a><br>
+    <a href="disc_new.php"><button type="button" class="btn btn-primary float-right" id="aj">Ajouter</button></a>
 
-    <h1>Nombre de diques (<?= $nb ?>)</h1>
-
-    <table>
-        <?php foreach ($tableau as $disc): ?>
-        <tr>
-            <td><img src="jaquettes/<?= $disc->disc_picture ?>" alt="<?= $disc->disc_picture ?>" width="40%"></td>
-            <td><?= $disc->disc_title ?></td>
-            <td aria-sort="descending"><?= $disc->artist_name ?></td>
-            <td>Label : <?= $disc->disc_label ?></td>
-            <td>Year : <?= $disc->disc_year ?></td>
-            <td>Genre : <?= $disc->disc_genre ?></td>
-            <td><a href="disc_detail.php?id=<?= $disc->disc_id ?>"><button>Détail</button></a></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="container">
+        <h2><p class="font-weight-bold">Nombres de disques (<?= $nb ?>)</p></h2>    
+        <div class="row">
+            <?php foreach ($tableau as $disc): ?>
+            <div class="card col-lg-5 col-12 m-4" style="width:18rem;"id="card">
+                <div class="row">
+                    <img src="jaquettes/<?= $disc->disc_picture ?>" style="max-width:auto;height:auto"  class="card-img-top col-6 w-25" id="imgcard" alt="<?= $disc->disc_picture ?>">
+                    <div class="card-body col-6">
+                        <p class="text-right font-weight-bold"><?= $disc->disc_title ?>
+                        <p class="text-right font-weight-bold"><?= $disc->artist_name ?>
+                        <p class="text-right">Label : <?= $disc->disc_label ?>
+                        <p class="text-right">Year : <?= $disc->disc_year ?>
+                        <p class="text-right">Genre :<?= $disc->disc_genre ?>
+                        <p class="text-right"><a href="disc_detail.php?id=<?= $disc->disc_id ?>" class="btn btn-primary stretched-link">Détails</a>
+                    </div>
+                </div>        
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 </section>
 
 <?php include("footer.php"); ?>

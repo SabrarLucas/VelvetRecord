@@ -9,4 +9,4 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Velvet Record</title>
 </head>
-<body>
+<body class="mr-5 ml-5">
