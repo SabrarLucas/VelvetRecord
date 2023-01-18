@@ -16,7 +16,6 @@
     // on récupère tous les résultats trouvés dans une variable
     $calcul = $test->fetch();
     $nb = $calcul['total'];
-    // on clôt la requête en BDD
 ?>
 
 
